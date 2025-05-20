@@ -16,7 +16,7 @@ export default function SignUp() {
     e.preventDefault();
     try {
       setLoading(true);
-      const res = await fetch('https://kayumba-jmv-java-spring-boot-backend-apis.onrender.com/api/signup', {
+      const res = await fetch('http://localhost:9091/rest/pms/api/v1/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -44,16 +44,16 @@ export default function SignUp() {
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
         <input
           type='text'
-          placeholder='username'
+          placeholder='names'
           className='border p-3 rounded-lg'
-          id='name'
+          id='names'
           onChange={handleChange}
         />
         <input
           type='email'
           placeholder='email'
           className='border p-3 rounded-lg'
-          id='username'
+          id='email'
           onChange={handleChange}
         />
         <input
@@ -63,18 +63,6 @@ export default function SignUp() {
           id='password'
           onChange={handleChange}
         />
-
-       <select
-          id='role'
-          className='border p-3 rounded-lg'
-          onChange={handleChange}
-        >
-          <option value=''>Select Role (SUPERUSER is only for owner of this App)</option>
-          <option value='ADMIN'>Admin</option>
-          <option value='USER'>User</option>
-        </select>
-
-
         <button
           disabled={loading}
           className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80'

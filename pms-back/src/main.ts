@@ -54,7 +54,6 @@ app.use((err: any, req: express.Request, res: express.Response, next: express.Ne
 // Start server
 
 app.listen(process.env.PORT, () => {
-    log(`Server is running at ${process.env.URL}`);
     log(`API documentation on ${process.env.SWAGGER_URL}`);
 }
 );
